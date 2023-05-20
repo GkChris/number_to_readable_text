@@ -1,0 +1,19 @@
+{
+  "name": "number-to-readable-text",
+  "version": "1.0.0",
+  "description": "numberFormatter() function converts a number (Works both with integer and float types) to string with point and decimal separators.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "GkChris",
+  "license": "ISC",
+  "keywords": [
+    "numbers",
+    "format"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:GkChris/number_to_readable_text.git"
+  }
+}
