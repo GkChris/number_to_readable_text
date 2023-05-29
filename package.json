@@ -1,6 +1,6 @@
 {
   "name": "number-to-readable-text",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "numberFormatter() function converts a number (Works both with integer and float types) to string with point and decimal separators.",
   "main": "index.js",
   "scripts": {

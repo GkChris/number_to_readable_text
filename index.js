@@ -1,17 +1,22 @@
-function numberFormatter(number, decimalSeparator) {
+function numberFormatter(number, options) {
     
   if ( !parseInt(number) ) return false;
 
+  options = {
+    decimalSeparator: options?.decimalSeparator ? options.decimalSeparator : ',',
+    forceShowDecimals: options?.forceShowDecimals ? options.forceShowDecimals : false
+  }
+
   const default_decimal_separator = ',';
   const default_decimal_point = '.';
-  const isSeparatorValid = decimalSeparator === '.' || decimalSeparator === ',' ? true : false;
+  const isSeparatorValid = options.decimalSeparator === '.' || options.decimalSeparator === ',' ? true : false;
 
-  const decimal_separator = decimalSeparator &&
-                          isSeparatorValid ? decimalSeparator : default_decimal_separator
+  const decimal_separator = options.decimalSeparator &&
+                          isSeparatorValid ? options.decimalSeparator : default_decimal_separator
 
-  const decimal_point = decimalSeparator &&
+  const decimal_point = options.decimalSeparator &&
                           isSeparatorValid && 
-                          decimalSeparator !== default_decimal_separator ? default_decimal_separator : default_decimal_point
+                          options.decimalSeparator !== default_decimal_separator ? default_decimal_separator : default_decimal_point
 
 
   const parsedNumber = parseFloat(number);
@@ -25,7 +30,7 @@ function numberFormatter(number, decimalSeparator) {
       
   const decimal_part = hasDecimal ?
                           parsedNumberToString.split(default_decimal_point)[1]
-                          : false;                    
+                          : '00';                    
 
   var counter = 0
   const formatted_whole = reversed_whole_toArray.map((char, index) => {
@@ -38,7 +43,8 @@ function numberFormatter(number, decimalSeparator) {
   }).reverse().join('')
 
 
-  return hasDecimal ? `${formatted_whole}${decimal_separator}${decimal_part}` : formatted_whole
+
+  return hasDecimal || options.forceShowDecimals ? `${formatted_whole}${decimal_separator}${decimal_part}` : formatted_whole
 }
 
 module.exports = numberFormatter

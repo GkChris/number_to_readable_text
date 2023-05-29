@@ -16,21 +16,24 @@ npm i number-to-readable-text
 ```Javascript
 const numberFormatter = require('number-to-readable-text');
 
-numberFormatter(<number>, <decimalSeparator>);
+numberFormatter(<number>, <options>);
 
-console.log(numberFormatter(1000000.12))
-
-[output] > '1.000.000,12'
+console.log(numberFormatter(1000000.12)) // output > '1.000.000,12'
 ```
 
 ## Arguments
 
 - number (required)
 
-- decimalSeparator (optional)
+- options (optional)
 
-#### decimalSeparator argument
->decimalSeparator has to a string of a dot ('.') or a comma (',').
+### Options
+
+| Option             | Type     | Description                                                       | Default  |
+|--------------------|----------|-------------------------------------------------------------------|----------|
+| decimalSeparator   | string   | decimalSeparator has to a string of a dot ('.') or a comma (','). | (',')    |
+| forceShowDecimals  | boolean  | Give true add two zeros if the given number is integer.           | false    |
+
 
 ## Exceptions
 >Function return false if the given number argument is not a valid number. If the separator is not a comma or a dot string the EU format is used as default
