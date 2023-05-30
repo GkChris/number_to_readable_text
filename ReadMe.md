@@ -29,10 +29,10 @@ console.log(numberFormatter(1000000.12)) // output > '1.000.000,12'
 
 ### Options
 
-| Option             | Type     | Description                                                          | Default  |
-|--------------------|----------|----------------------------------------------------------------------|----------|
-| decimalSeparator   | string   | decimalSeparator has to a string of a dot ('.') or a comma (',').    | (',')    |
-| forceShowDecimals  | boolean  | True adds two zeros as decimals even if the given number is integer. | false    |
+| Option             | Type     | Description                                                             | Default  |
+|--------------------|----------|-------------------------------------------------------------------------|----------|
+| decimalSeparator   | string   | decimalSeparator has to be a string of a dot ('.') or a comma (',').    | (',')    |
+| forceShowDecimals  | boolean  | True adds two zeros as decimals even if the given number is integer.    | false    |
 
 
 ## Exceptions
