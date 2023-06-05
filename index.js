@@ -1,6 +1,6 @@
 function numberFormatter(number, options) {
     
-  if ( !parseInt(number) ) return false;
+  if ( !parseInt(number) && number !== 0 ) return false;
 
   options = {
     decimalSeparator: options?.decimalSeparator ? options.decimalSeparator : ',',
